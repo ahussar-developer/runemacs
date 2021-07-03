@@ -13,10 +13,6 @@
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 (set-face-attribute 'default nil :font "FiraCode Nerd Font Mono" :height 125)
-;(set-face-attribute 'default nil :font "DejaVu Sans" :height 125)
-
-(set-face-attribute 'mode-line nil
-                    :background "#666666")
 
 ;; initialize package source
 (require 'package)
@@ -40,9 +36,9 @@
 (use-package command-log-mode)
 
 (use-package counsel)
-(use-package all-the-icons)
 
 (use-package ivy
+  :diminish
   :bind (("C-s" . swiper)
 	 :map ivy-minibuffer-map
 	 ("TAB" . ivy-alt-done)
@@ -57,9 +53,5 @@
 	 ("C-k" . ivy-previous-line)
 	 ("C-d" . ivy-reverse-i-search-kill))
   :config
-  (ivy-mode 1))
-
-(use-package doom-modeline
-  :ensure t
-  :init (doom-modeline-mode 1)
-  :custom ((doom-modeline-height 15)))
+  (ivy-mode 1
+)
